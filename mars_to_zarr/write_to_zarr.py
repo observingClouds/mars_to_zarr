@@ -76,8 +76,8 @@ def write_to_zarr(ds: xr.Dataset, dataset_dict: dict) -> None:
             "10v": "v10m",
             "sp": "pres0m",
             "msl": "pres_seasurface",
-            "ssr": "swavr0m",
-            "str": "lwavr0m",
+            "ssrd": "swavr0m",
+            "strd": "lwavr0m",
             "z": "orography",
         }
     elif level_type == "pressure_level":
