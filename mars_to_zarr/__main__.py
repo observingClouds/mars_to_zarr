@@ -27,6 +27,13 @@ def _setup_argparse():
         action="store_true",
         help="Increase output verbosity",
     )
+    parser.add_argument(
+        "-r",
+        "--retrieve",
+        action="store_true",
+        default=False,
+        help="Retrieve output from MARS",
+    )
 
     return parser
 
@@ -44,7 +51,8 @@ def run():
         logger.info(f"Working on dataset: {dataset_name}")
 
         # Retrieve grib from MARS
-        retrieve_data(dataset_dict)
+        if args.retrieve:
+            retrieve_data(dataset_dict)
 
         # Read the retrieved grib data
         ds = read_source(dataset_dict)
