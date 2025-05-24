@@ -27,7 +27,7 @@ def write_to_zarr(ds: xr.Dataset, dataset_dict: dict) -> None:
         #output_path = Path(f"{data_root}/{model}/zarr/output.zarr")
         output_path = Path(
             f"{data_root}/{model}/zarr/"
-            f"{dataset_dict['general']['grib_fn'].rsplit(".grib", 1)[0]}.zarr"
+            f'{dataset_dict["general"]["grib_fn"].rsplit(".grib", 1)[0]}.zarr'
         )
 
     output_path.mkdir(parents=True, exist_ok=True)
